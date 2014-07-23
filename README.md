@@ -16,3 +16,7 @@ git config --global merge.tool vimdiff
 #---Aliases---#
 #monitor system log with syntax highlighting
 alias syshow='sudo tail -n 50 -F /var/log/syslog | source-highlight --out-format=esc -o STDOUT -s log'
+alias crep='GREP_COLOR="1;35" grep --color'
+alias pout='ps aux | grep -v "grep" | GREP_COLOR="1;35" grep --color "$@"'
+
+
