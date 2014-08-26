@@ -27,3 +27,12 @@ sed -i '$a alias ll=\x27ls -l -a\x27' ~/.bash_aliases
 
 #----Command Prompt Color----#
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\n\n\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\[\033[01;32m\]\$\[\033[00m\]'
+
+
+#---For Qt Xterm settings---#
+#edit .Xresources in home directory
+xterm*font: *-fixed-*-*-*-20-*
+xterm*vt100*geometry: 70x300+0+0
+
+#then reload X using 
+$ xrdb -merge ~/.Xresources
