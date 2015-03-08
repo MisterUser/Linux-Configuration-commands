@@ -6,6 +6,9 @@ Commands to customize a new installation/system
 #always have syntax highlighting on in vim
 echo "syntax on" > ~/.vimrc
 
+#make vim git editor
+git config --global core.editor "vim"
+
 #make vimdiff default git difftool
 git config --global diff.tool vimdiff
 git config --global difftool.prompt false
