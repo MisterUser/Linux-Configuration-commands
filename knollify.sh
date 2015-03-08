@@ -7,6 +7,8 @@
 
 #always have syntax highlighting on in vim
 echo "syntax on" > ~/.vimrc
+map <F7> :%s/\%V#/ /
+map <F8> :%s/\%V/#/
 
 #make vimdiff default git difftool
 git config --global diff.tool vimdiff
