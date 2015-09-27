@@ -13,13 +13,17 @@ set expandtab
 set autoindent
 set shiftwidth=4
 set showmatch
+set ruler
 let python_highlight_all = 1
+set backspace=2 "have to set backspace for some reason
 
 map <F2> :NERDTreeToggle<CR>
 map <F3> :TlistToggle<CR>
 map <F4> :TaskList<CR>
-map <F7> :%s/\%V#/ /
-map <F8> :%s/\%V/#/
+map <F7> :norm ^xx<CR>
+"%s/\%V#//<CR>
+map <F8> :norm I# <CR>
+"%s/\%V/#/<CR>
 
 let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1
@@ -28,11 +32,11 @@ let g:miniBufExplModSelTarget = 1
 
 let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
-
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+"The below are already accomplished with the miniBufExpl settings above
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 " Python-mode
 " Activate rope
@@ -73,8 +77,12 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
-let g:pymode_folding = 0
+let g:pymode_folding = 1
 
+let g:pymode_run=1
+let g:pymode_run_bind='<leader>r'
+let g:pymode_options_colorcolumn = 0
+let g:pymode_python='python3'
 
 "NerdTree Settings
 let g:NERDTreeDirArrows = 1
