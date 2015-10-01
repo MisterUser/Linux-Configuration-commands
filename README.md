@@ -21,5 +21,5 @@ git config --global merge.tool vimdiff
 alias syshow='sudo tail -n 50 -F /var/log/syslog | source-highlight --out-format=esc -o STDOUT -s log'
 alias crep='GREP_COLOR="1;35" grep --color'
 alias pout='ps aux | grep -v "grep" | GREP_COLOR="1;35" grep --color "$@"'
-
+git log| vim --R
 
