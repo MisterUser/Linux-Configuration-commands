@@ -1,0 +1,32 @@
+VIM:
+
+e -> end of word
+H -> top
+M -> middle
+L -> bottom
+
+zo -> open fold
+zc -> close fold
+zO -> open all
+zC -> close all
+
+z. -> center
+zt -> top
+zb -> bottom
+
+Ctrl-o -> last cursor
+Ctrl-i -> next cursor
+
+*-> next match cursr
+#-> prev match cursr
+
+
+
+
+screen:
+CA+; -> all wins
+CA:resize +/-N
+CA| -> vsp
+CAS -> hsp
+CATAB -> n split
+
