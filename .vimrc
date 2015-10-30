@@ -41,7 +41,6 @@ let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 "nnoremap <C-L> <C-W><C-L>
 "nnoremap <C-H> <C-W><C-H>
 
-
 " Python-mode
 " Activate rope
 " Keys:
