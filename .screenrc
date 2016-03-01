@@ -1,0 +1,13 @@
+termcapinfo xterm* ti@:te@
+
+# Don't display the copyright page
+startup_message off
+
+rendition so wc
+
+bind + resize +10
+bind - resize -10
+
+setenv PROMPT_COMMAND 'echo -ne "\033_`pwd`\033\\"'
+#caption always "%H-->%n:%t%? (%u)%?%?: %h%?"
+caption always '%H-->%n:%h%='
