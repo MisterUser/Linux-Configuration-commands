@@ -6,7 +6,7 @@
 #Commands to customize a new installation/system
 
 #always have syntax highlighting on in vim
-echo "syntax on" > ~/.vimrc
+echo "syntax on" >> ~/.vimrc
 map <F7> :%s/\%V#/ /
 map <F8> :%s/\%V/#/
 
