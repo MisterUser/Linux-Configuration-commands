@@ -1,2 +1,7 @@
 syntax/
 bundle/
+autoload/
+jedi-vim_DISABLED/
+plugin/
+.netrwhist
+.directory
