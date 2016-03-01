@@ -1,3 +1,13 @@
+"List of plugins:
+" - pathogen
+" - python-mode (has rope)
+" - nerdtree
+" - ctags-5.8
+" - debugger.vim (disabled?)
+" - jedi-vim (disabled)
+" - minibuf (disabled)
+" - taglist
+" - tasklist
 "For Pathogen
 filetype off
 execute pathogen#infect()
@@ -19,6 +29,12 @@ set ruler
 let python_highlight_all = 1
 set backspace=2 "have to set backspace for some reason
 
+nnoremap <Leader>f :buffers<CR>
+nnoremap <Leader>s :so ~/.vimrc<CR>
+map + 10<C-W>><CR>
+map - 10<C-W><<CR>
+nmap <S-Enter> O<Esc>j
+nmap <Enter> o<Esc>k
 map <F2> :NERDTreeToggle<CR> 
 map <F3> :TlistToggle<CR>
 map <F4> :TaskList<CR>
@@ -27,19 +43,23 @@ map <F7> :norm ^xx<CR>
 map <F8> :norm I# <CR> 
 map <F9> :norm I% <CR>
 map <F11> :20vsp /home/mr_user/.vim/vim_command_notes<CR>
+nmap nc :%s/\([,#]\{1}\)\(\S\)/\1 \2/g<CR>
 
-let g:miniBufExplMapWindowNavVim = 1
-let g:miniBufExplMapWindowNavArrows = 1
-let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1
+" let g:miniBufExplMapWindowNavVim = 1
+" let g:miniBufExplMapWindowNavArrows = 1
+" let g:miniBufExplMapCTabSwitchBufs = 1
+" let g:miniBufExplModSelTarget = 1
 
 let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
 "The below are already accomplished with the miniBufExpl settings above
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
+noremap <C-J> <C-W><C-J>
+noremap <C-K> <C-W><C-K>
+noremap <C-L> <C-W><C-L>
+noremap <C-H> <C-W><C-H>
+
+highlight clear SpellBad
+highlight SpellBad term=underline cterm=underline ctermfg=5 gui=underline guifg=SlateBlue
 
 " Python-mode
 " Activate rope
@@ -54,7 +74,8 @@ let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 0
+let g:pymode_rope = 1
+let g:pymode_rope_complete_on_dot = 0
 
 " Documentation
 let g:pymode_doc = 1
@@ -62,12 +83,14 @@ let g:pymode_doc_key = 'K'
 
 "Linting
 let g:pymode_lint = 1
-let g:pymode_lint_checker = "pyflakes,pep8"
+"let g:pymode_lint_checker = "pyflakes,pep8"
+let g:pymode_lint_checker = "pyflakes"
 " Auto check on save
 let g:pymode_lint_write = 1
+let g:pymode_lint_ignore="E302,E303,E221,E501,E402,E114,E116"
 
 " Support virtualenv
-let g:pymode_virtualenv = 1
+let g:pymode_virtualenv = 0
 
 " Enable breakpoints plugin
 let g:pymode_breakpoint = 1
@@ -80,7 +103,7 @@ let g:pymode_syntax_indent_errors = g:pymode_syntax_all
 let g:pymode_syntax_space_errors = g:pymode_syntax_all
 
 " Don't autofold code
-let g:pymode_folding = 0
+let g:pymode_folding = 1
 
 let g:pymode_run=1
 let g:pymode_run_bind='<leader>r'
