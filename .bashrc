@@ -57,9 +57,33 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 color_prompt=yes
+filecount=$(ls -l | grep "^-" | wc -l)
+dircount=$(ls -l | grep "^d" | wc -l)
+dirsize=$(du -hs | awk '{print $1}')
+if [[ ${EUID} == 0 ]] ; then
+    sq_color="\[\033[0;31m\]"
+    user_color="\[\e[38;5;15m\]"
+else        
+    # sq_color="\[\033[0;34m\]"
+    user_color="\[\e[38;5;53m\]"
+    sq_color="\[\e[01;34m\]"
+    # sq_color="\[\e[38;5;27m\]"
+fi
+ender="\[\e[00m\]"
+mach_color="\[\e[38;5;6m\]"
+prompt1="$sq_color\342\224\214\342\224\200[$ender"
+promptdiv1="$sq_color]\342\224\200[$ender"
+promptdiv2="$sq_color]\342\224\200($ender"
+promptdiv3="$sq_color)\342\224\200[$ender"
+user_info="$user_color\u$mach_color@\h$ender"
+dir_info="$user_color\w$ender$promptdiv2$ender$user_color"
+prompt3="$sq_color\342\224\224\342\224\200\342\225\274\[\e[00m\]"
+prompt4="$sq_color\342\224\200\342\226\210\342\226\210$ender"
+promptTime="$promptdiv3$user_color\A \d$sq_color]$ender"
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[38;5;22m\]\n\n\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\[\033[38;5;18m\]\$\[\033[00m\]'
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[38;5;22m\]\n\n\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n\[\033[38;5;18m\]\$\[\033[00m\]'
+    PS1="${debian_chroot:+($debian_chroot)}\n\n$prompt1$user_info$promptdiv1$dir_info\$(du -hs | awk '{print \$1}')b$ender$promptTime\n$prompt3"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
