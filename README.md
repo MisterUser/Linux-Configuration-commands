@@ -4,7 +4,7 @@ Linux-Configuration-commands
 Commands to customize a new installation/system
 
 #always have syntax highlighting on in vim
-echo "syntax on" > ~/.vimrc
+echo "syntax on" >> ~/.vimrc
 
 #make vim git editor
 git config --global core.editor "vim"
