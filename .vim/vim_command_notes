@@ -1,14 +1,20 @@
 VIM:
 
+<Leader> = \
+
 e -> end of word
 H -> top
 M -> middle
 L -> bottom
+J -> remove newline
 
 zo -> open fold
 zc -> close fold
-zO -> open all
+zO -> open all lvls
 zC -> close all
+zR -> open all folds
+zM -> close all folds
+
 
 z. -> center
 zt -> top
@@ -20,7 +26,19 @@ Ctrl-i -> next cursor
 *-> next match cursr
 #-> prev match cursr
 
+bd -> close buffer
+ls -> list buffers
 
+F2: Dir Tree
+F3: Object list
+F4: Task list
+F5: exec py on this buffer
+F7: uncomment line
+F8: # comment
+F9: % comment
+F11: show key bindings
+
+#i+char+ESC: insert char # times
 
 
 screen:
