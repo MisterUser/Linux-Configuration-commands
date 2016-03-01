@@ -1,0 +1,31 @@
+whereis - where a file(executable) is
+du - disk usage
+top - list of processes
+vim - text editor (comes with vimtutor)
+wc 'file'- word command
+tar xvzf filename.tar.gz
+to run a .jar file: java -jar filename.jar (in the directory with the .jar)
+ENDOFFILE command in Ubuntu: CTRL-d
+crontab -e  = edit crontab
+crontab -l  = list crontab
+a2ensite
+a2dissite
+mysql data -> /var/lib/mysql/
+apache_re -> /etc/init.d/apache2 restart 
+k2pdfopt "name of pdf" -> to convert pdf to e-book
+special characters in Open Office: CTL+SHIFT+u then code
+   - delta: u2206
+   - Ohm: u2126
+   - infinity: u221E
+   - proportional: u221D
+   - tau u03c4
+   - derivative: u2202
+   - phi: u03d5
+   - degrees: u00ba
+   - beta: u03b2
+   - micro: u00B5
+   - alpha: u03B1
+   - pi:u03c0
+   - rho: u03c1
+   - epsilon: u03b5
+   - mu: u03bc
