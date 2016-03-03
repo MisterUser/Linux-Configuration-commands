@@ -1,5 +1,9 @@
 VIM:
 
+to avoid indents while pasting
+:set paste
+:set nopaste
+
 <Leader> = \
 
 e -> end of word
