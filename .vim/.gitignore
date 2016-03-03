@@ -5,3 +5,4 @@ jedi-vim_DISABLED/
 plugin/
 .netrwhist
 .directory
+colors/
