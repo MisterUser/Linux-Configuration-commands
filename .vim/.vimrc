@@ -107,7 +107,7 @@ let g:pymode_folding = 1
 
 let g:pymode_run=1
 let g:pymode_run_bind='<leader>r'
-let g:pymode_options_colorcolumn = 0
+let g:pymode_options_colorcolumn = 1
 let g:pymode_python='python3'
 
 "NerdTree Settings
@@ -119,3 +119,13 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 augroup filetypedetect 
 au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
 augroup END 
+
+hi VertSplit ctermbg=Cyan ctermfg=NONE
+hi ColorColumn ctermbg=Grey ctermfg=Black
+set fillchars+=vert:│
+"autocmd ColorScheme * highlight VertSplit cterm=None ctermfg=Cyan ctermbg=None
+
+if &diff
+    colorscheme late_evening
+endif
+
