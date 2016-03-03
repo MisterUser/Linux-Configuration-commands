@@ -1,20 +1,40 @@
 "List of plugins:
-" - pathogen
+" - pathogen (disabled)
 " - python-mode (has rope)
-" - nerdtree
-" - ctags-5.8
+" - nerdtree (disabled) -> use :E instead (netrw)
+" - ctags-5.8 -> taglist
 " - debugger.vim (disabled?)
 " - jedi-vim (disabled)
 " - minibuf (disabled)
-" - taglist
+" - taglist 
 " - tasklist
-"For Pathogen
+" - python_pydoc
 filetype off
-execute pathogen#infect()
 filetype plugin indent on
-
 syntax on
 syntax enable
+
+
+function! ToggleVExplorer()
+    if exists("t:expl_buf_num")
+        let expl_win_num = bufwinnr(t:expl_buf_num)
+        if expl_win_num != -1
+            let cur_win_nr = winnr()
+            exec expl_win_num . 'wincmd w'
+            close
+            exec cur_win_nr . 'wincmd w'
+            unlet t:expl_buf_num
+        else
+            unlet t:expl_buf_num
+        endif
+    else
+        exec '1wincmd w'
+        Vexplore
+        let t:expl_buf_num = bufnr("%")
+    endif
+endfunction
+
+
 
 set splitright
 
@@ -35,7 +55,8 @@ map + 10<C-W>><CR>
 map - 10<C-W><<CR>
 nmap <S-Enter> O<Esc>j
 nmap <Enter> o<Esc>k
-map <F2> :NERDTreeToggle<CR> 
+"map <F2> :NERDTreeToggle<CR> 
+map <silent> <F2> :call ToggleVExplorer()<CR>
 map <F3> :TlistToggle<CR>
 map <F4> :TaskList<CR>
 map <buffer> <F5> :exec '!python' shellescape(@%, 1)<CR>
@@ -111,21 +132,30 @@ let g:pymode_options_colorcolumn = 1
 let g:pymode_python='python3'
 
 "NerdTree Settings
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
+"let g:NERDTreeDirArrows = 1
+"let g:NERDTreeDirArrowExpandable = '▸'
+"let g:NERDTreeDirArrowCollapsible = '▾'
 
 " Octave syntax 
 augroup filetypedetect 
 au! BufRead,BufNewFile *.m,*.oct set filetype=octave 
 augroup END 
 
+set fillchars+=vert:│
 hi VertSplit ctermbg=Cyan ctermfg=NONE
 hi ColorColumn ctermbg=Grey ctermfg=Black
-set fillchars+=vert:│
 "autocmd ColorScheme * highlight VertSplit cterm=None ctermfg=Cyan ctermbg=None
 
+" vimdiff colorscheme
 if &diff
     colorscheme late_evening
 endif
 
+" Hit enter in the file browser to open the selected
+" file with :vsplit to the right of browser
+let g:netrw_browse_split = 2
+" let g:netrw_altv = 1
+" let g:netrw_preview=1
+
+" Default to tree mode
+let g:netrw_liststyle = 3
