@@ -70,7 +70,7 @@ map + 10<C-W>><CR>
 map - 10<C-W><<CR>
 nmap <S-Enter> O<Esc>j
 nmap <Enter> o<Esc>k
-"map <F2> :NERDTreeToggle<CR> 
+" map <F2> :NERDTreeToggle<CR> 
 map <silent> <F2> :call ToggleVExplorer()<CR>
 map <F3> :TlistToggle<CR>
 map <F4> :TaskList<CR>
@@ -169,7 +169,8 @@ endif
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of browser
 let g:netrw_browse_split = 2
-" let g:netrw_altv = 1
+let g:netrw_winsize = 15 
+" let g:netrw_altv = 1 " changes from left to right split
 " let g:netrw_preview=1
 
 " Default to tree mode
