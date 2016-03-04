@@ -1,6 +1,15 @@
 VIM:
 
+to avoid indents while pasting
+:set paste
+:set nopaste
+
 <Leader> = \
+\r - run
+\b - breakpoint
+K - documentation
+:Pydoc <func> documentation
+
 
 e -> end of word
 H -> top
@@ -29,14 +38,17 @@ Ctrl-i -> next cursor
 bd -> close buffer
 ls -> list buffers
 
-F2: Dir Tree
+F1: Vim help
+F2: Dir Tree (Vexplore)
+   - P to open in last win horiz
+   - v to open vertical split
 F3: Object list
 F4: Task list
-F5: exec py on this buffer
+
 F7: uncomment line
 F8: # comment
 F9: % comment
-F11: show key bindings
+F11: show this help
 
 #i+char+ESC: insert char # times
 
@@ -47,4 +59,5 @@ CA:resize +/-N
 CA| -> vsp
 CAS -> hsp
 CATAB -> n split
+:layout save default - saves splits btwn sessions
 

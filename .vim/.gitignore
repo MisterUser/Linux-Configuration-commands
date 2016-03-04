@@ -6,3 +6,14 @@ plugin/
 .netrwhist
 .directory
 colors/
+Rakefile
+after/
+debug.vim
+doc/
+ftplugin/
+old_plugins/
+pylama.ini
+pymode/
+python-mode.yaml
+python-mode/
+t/
