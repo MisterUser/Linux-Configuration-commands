@@ -34,6 +34,21 @@ function! ToggleVExplorer()
     endif
 endfunction
 
+function! ToggleVimNotes()
+    if exists("t:vim_notes_buf_num")
+        let vim_note_win_num = bufwinnr(t:vim_notes_buf_num)
+        if vim_note_win_num != -1
+            exec vim_note_win_num . 'wincmd w'
+            close
+            unlet t:vim_notes_buf_num
+        else
+            unlet t:vim_notes_buf_num
+        endif
+    else
+        :20vsp ~/linux_configs/.vim/vim_command_notes
+        let t:vim_notes_buf_num = bufnr("%")
+    endif
+endfunction
 
 
 set splitright
@@ -63,7 +78,7 @@ map <buffer> <F5> :exec '!python' shellescape(@%, 1)<CR>
 map <F7> :norm ^xx<CR> 
 map <F8> :norm I# <CR> 
 map <F9> :norm I% <CR>
-map <F11> :20vsp /home/mr_user/.vim/vim_command_notes<CR>
+map <F11> :call ToggleVimNotes()<CR>
 nmap nc :%s/\([,#]\{1}\)\(\S\)/\1 \2/g<CR>
 
 " let g:miniBufExplMapWindowNavVim = 1
