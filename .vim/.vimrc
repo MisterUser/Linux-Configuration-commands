@@ -74,7 +74,8 @@ nmap <Enter> o<Esc>k
 map <silent> <F2> :call ToggleVExplorer()<CR>
 map <F3> :TlistToggle<CR>
 map <F4> :TaskList<CR>
-map <buffer> <F5> :exec '!python' shellescape(@%, 1)<CR>
+" map <buffer> <F5> :exec '!python' shellescape(@%, 1)<CR> # already
+" accomplished by <leader>r in python-mode
 map <F7> :norm ^xx<CR> 
 map <F8> :norm I# <CR> 
 map <F9> :norm I% <CR>
