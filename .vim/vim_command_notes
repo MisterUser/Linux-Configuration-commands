@@ -44,7 +44,7 @@ F2: Dir Tree (Vexplore)
    - v to open vertical split
 F3: Object list
 F4: Task list
-
+F5: debug
 F7: uncomment line
 F8: # comment
 F9: % comment
@@ -52,6 +52,8 @@ F11: show this help
 
 #i+char+ESC: insert char # times
 
+Vimdiff
+:diffg RE/BA/LO
 
 screen:
 CA+; -> all wins
