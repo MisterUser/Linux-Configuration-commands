@@ -68,8 +68,8 @@ set backspace=2 "have to set backspace for some reason
 
 nnoremap <Leader>f :buffers<CR>
 nnoremap <Leader>s :so ~/.vimrc<CR>
-map + 10<C-W>><CR>
-map - 10<C-W><<CR>
+map + 10<C-W>>
+map - 10<C-W><
 nmap <S-Enter> O<Esc>j
 nmap <Enter> o<Esc>k
 " inoremap <C-Space> <C-x><C-o>
