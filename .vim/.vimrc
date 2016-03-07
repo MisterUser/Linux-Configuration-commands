@@ -78,7 +78,7 @@ map <F4> :TaskList<CR>
 map <buffer> <F5> :exec '!python' shellescape(@%, 1)<CR> 
 map <F7> :norm ^xx<CR> 
 map <F8> :norm I# <CR> 
-map <F9> :norm I% <CR>
+map <F9> :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)<CR>
 map <F11> :call ToggleVimNotes()<CR>
 nmap nc :%s/\([,#]\{1}\)\(\S\)/\1 \2/g<CR>
 
