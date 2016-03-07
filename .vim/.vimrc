@@ -56,6 +56,7 @@ set splitright
 "set number
 set nowrap
 set ts=4
+set tabstop=4
 set expandtab
 set autoindent
 set shiftwidth=4
@@ -63,13 +64,15 @@ set showmatch
 set ruler
 let python_highlight_all = 1
 set backspace=2 "have to set backspace for some reason
+"set omnifunc=syntaxcomplete#Complete
 
 nnoremap <Leader>f :buffers<CR>
 nnoremap <Leader>s :so ~/.vimrc<CR>
-map + 10<C-W>><CR>
-map - 10<C-W><<CR>
+map + 10<C-W>>
+map - 10<C-W><
 nmap <S-Enter> O<Esc>j
 nmap <Enter> o<Esc>k
+" inoremap <C-Space> <C-x><C-o>
 " map <F2> :NERDTreeToggle<CR> 
 map <silent> <F2> :call ToggleVExplorer()<CR>
 map <F3> :TlistToggle<CR>
