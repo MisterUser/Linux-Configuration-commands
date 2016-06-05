@@ -20,3 +20,6 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+
+export PATH=/home/mr_user/Workspace/stm32_projects/Tools_and_Libs/stlink:$PATH
+export PATH=/home/mr_user/Workspace/stm32_projects/Tools_and_Libs/GNU_sourcery_toolchain_arm_05_2014/bin:$PATH
