@@ -65,20 +65,22 @@ set ruler
 let python_highlight_all = 1
 set backspace=2 "have to set backspace for some reason
 "set omnifunc=syntaxcomplete#Complete
+"g/^\_s\+print/s/$/)/gc -> adds paren at all lines starting w/ print
 
-nnoremap <Leader>f :buffers<CR>
-nnoremap <Leader>s :so ~/.vimrc<CR>
+nnoremap <leader>f :buffers<CR>
+nnoremap <leader>s :so ~/.vimrc<CR>
 map + 10<C-W>>
 map - 10<C-W><
 nmap <S-Enter> O<Esc>j
 nmap <Enter> o<Esc>k
+nmap <leader>b ipu.db  # @XXX<Esc>
 " inoremap <C-Space> <C-x><C-o>
 " map <F2> :NERDTreeToggle<CR> 
 map <silent> <F2> :call ToggleVExplorer()<CR>
 map <F3> :TlistToggle<CR>
 map <F4> :TaskList<CR>
 " <F5> for debug
-map <buffer> <F5> :exec '!python' shellescape(@%, 1)<CR> 
+map <buffer> <F5> :exec '!python3' shellescape(@%, 1)<CR> 
 map <F7> :norm ^xx<CR> 
 map <F8> :norm I# <CR> 
 map <F9> :norm I% <CR>
@@ -116,15 +118,24 @@ highlight SpellBad term=underline cterm=underline ctermfg=5 gui=underline guifg=
 " ]M            Jump on next class or method (normal, visual, operator modes)
 let g:pymode_rope = 1
 let g:pymode_rope_complete_on_dot = 0
+" once autcomplete is done, close preview window
+autocmd CompleteDone * pclose 
 " Override go-to.definition key shortcut to Ctrl-]
 let g:pymode_rope_goto_definition_bind = '<leader>d'
+let g:pymode_rope_rename_bind = '<leader>n'
+let g:pymode_rope_rename_module_bind = '<leader>nm'
+let g:pymode_rope_autoimport = 1
+let g:pymode_rope_autoimport_bind = '<leader>ai'
+let g:pymode_rope_extract = 1
+let g:pymode_rope_extract_method_bind = '<leader>mm'
+" let g:pymode_rope_change_signature_bind = '<leader>fs'
 
 " Documentation
 let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
 
 "Linting
-let g:pymode_lint = 1
+let g:pymode_lint = 0
 "let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_checker = "pyflakes"
 " Auto check on save
@@ -135,8 +146,8 @@ let g:pymode_lint_ignore="E302,E303,E221,E501,E402,E114,E116"
 let g:pymode_virtualenv = 0
 
 " Enable breakpoints plugin
-let g:pymode_breakpoint = 1
-let g:pymode_breakpoint_bind = '<leader>b'
+let g:pymode_breakpoint = 0
+" let g:pymode_breakpoint_bind = '<leader>b'
 
 " syntax highlighting
 let g:pymode_syntax = 1
