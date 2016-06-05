@@ -37,6 +37,7 @@ Ctrl-i -> next cursor
 
 bd -> close buffer
 ls -> list buffers
+Ctrl-w+o -> close all other wins
 
 F1: Vim help
 F2: Dir Tree (Vexplore)
