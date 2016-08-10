@@ -7,6 +7,8 @@ rendition so wc
 
 bind = resize +10
 bind - resize -10
+bind ] resize +50 
+bind [ resize -50
 
 setenv PROMPT_COMMAND 'echo -ne "\033_`pwd`\033\\"'
 #caption always "%H-->%n:%t%? (%u)%?%?: %h%?"

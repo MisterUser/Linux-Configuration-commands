@@ -116,9 +116,9 @@ highlight SpellBad term=underline cterm=underline ctermfg=5 gui=underline guifg=
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_completion = 1
+let g:pymode_rope_completion = 0
 " once autcomplete is done, close preview window
 autocmd CompleteDone * pclose 
 " Override go-to.definition key shortcut to Ctrl-]
@@ -136,7 +136,7 @@ let g:pymode_doc = 1
 let g:pymode_doc_key = 'K'
 
 "Linting
-let g:pymode_lint = 1
+let g:pymode_lint = 0
 "let g:pymode_lint_checker = "pyflakes,pep8"
 let g:pymode_lint_checker = "pyflakes"
 " Auto check on save
