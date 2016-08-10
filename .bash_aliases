@@ -1,6 +1,6 @@
 alias p3='/usr/bin/python3'
 alias ip3='/usr/local/bin/ipython3'
-alias ip3n='cd /home/mr_user/Dropbox/Schule/TU_Berlin && /usr/local/bin/ipython3 notebook'
+alias jup='cd /home/mr_user/Dropbox/Schule/TU_Berlin && /usr/local/bin/jupyter notebook'
 alias mns='cd /home/mr_user/Dropbox/Schule/TU_Berlin/MNS'
 alias mi='cd /home/mr_user/Dropbox/Schule/TU_Berlin/Machine_Intelligence'
 alias mohr='cd /home/mr_user/Dropbox/Schule/TU_Berlin/Mohr_NI_Lab/scripts'
