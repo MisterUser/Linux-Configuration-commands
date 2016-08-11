@@ -86,6 +86,7 @@ map <F8> :norm I# <CR>
 "map <F9> :norm I% <CR>
 map <F9> :norm BvExa'<Esc>pa'
 map <F10> :norm BvExa(<Esc>pa)
+"map <F9> :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)<CR>
 map <F11> :call ToggleVimNotes()<CR>
 nmap nc :%s/\([,#]\{1}\)\(\S\)/\1 \2/g<CR>
 
@@ -118,7 +119,7 @@ highlight SpellBad term=underline cterm=underline ctermfg=5 gui=underline guifg=
 " ]]            Jump on next class or function (normal, visual, operator modes)
 " [M            Jump on previous class or method (normal, visual, operator modes)
 " ]M            Jump on next class or method (normal, visual, operator modes)
-let g:pymode_rope = 1
+let g:pymode_rope = 0
 let g:pymode_rope_complete_on_dot = 0
 let g:pymode_rope_completion = 1
 " once autcomplete is done, close preview window
