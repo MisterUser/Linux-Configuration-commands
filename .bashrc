@@ -145,3 +145,5 @@ fi
 
 export PYTHONPATH="${PYTHONPATH}:/home/mr_user/Workspace/weather_2016"
 export PYTHONPATH="${PYTHONPATH}:/home/mr_user/Dropbox/Schule/TU_Berlin/python_lib"
+
+export PATH="/home/mr_user/anaconda3/bin:$PATH"
