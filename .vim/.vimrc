@@ -83,7 +83,9 @@ map <F4> :TaskList<CR>
 map <buffer> <F5> :exec '!python3' shellescape(@%, 1)<CR> 
 map <F7> :norm ^xx<CR> 
 map <F8> :norm I# <CR> 
-map <F9> :norm I% <CR>
+"map <F9> :norm I% <CR>
+map <F9> :norm BvExa'<Esc>pa'
+map <F10> :norm BvExa(<Esc>pa)
 map <F11> :call ToggleVimNotes()<CR>
 nmap nc :%s/\([,#]\{1}\)\(\S\)/\1 \2/g<CR>
 
@@ -118,6 +120,7 @@ highlight SpellBad term=underline cterm=underline ctermfg=5 gui=underline guifg=
 " ]M            Jump on next class or method (normal, visual, operator modes)
 let g:pymode_rope = 1
 let g:pymode_rope_complete_on_dot = 0
+let g:pymode_rope_completion = 1
 " once autcomplete is done, close preview window
 autocmd CompleteDone * pclose 
 " Override go-to.definition key shortcut to Ctrl-]
