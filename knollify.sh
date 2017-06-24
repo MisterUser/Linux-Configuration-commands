@@ -8,8 +8,6 @@ sudo apt-get -y install git
 sudo apt-get -y install vim
 sudo apt-get -y install screen
 
-# sudo apt-get -y install chromium-browser
-# sudo apt-get -y install guake
 
 # Latex
 sudo apt-get install texlive texlive-lang-german texlive-doc-de texlive-latex-extra
@@ -41,7 +39,7 @@ git config --global merge.tool vimdiff
 # install dropbox
 # install chrome
 # install pycharm
-
+# sudo apt-get -y install guake
 
 
 #-------------------------------NOTES----------------------------#
