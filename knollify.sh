@@ -11,6 +11,14 @@
 # $ chmod +x ~/.linux_configs/knollify.sh
 # $ ~/.linux_configs/knollify.sh
 
+# Create backup directories
+mkdir ~/Books
+mkdir ~/Movies
+mkdir ~/Personal_Movies
+mkdir ~/Personal_Music
+mkdir ~/Personal_Photos
+mkdir ~/Workspace
+
 cd ~
 
 sudo apt-get -y install vim
