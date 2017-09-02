@@ -8,11 +8,13 @@ sudo apt-get -y install git
 sudo apt-get -y install vim
 sudo apt-get -y install screen
 sudo apt-get -y install ncurses-term
-
+sudo apt-get -y install gtk-redshift
+sudo apt-get -y install gparted
+sudo apt-get -y install exfat-fuse exfat-utils
 
 # Latex
-sudo apt-get install texlive texlive-lang-german texlive-doc-de texlive-latex-extra
-sudo apt-get install dvipng  # for matplotlib
+sudo apt-get -y install texlive texlive-lang-german texlive-doc-de texlive-latex-extra texmaker
+sudo apt-get -y install dvipng  # for matplotlib
 
 git clone https://github.com/MisterUser/Linux-Configuration-commands.git ~/linux_configs
 
