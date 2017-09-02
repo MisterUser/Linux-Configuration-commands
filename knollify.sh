@@ -8,10 +8,10 @@
 # First download git: 
 # $ sudo apt-get -y install git
 # $ git clone https://github.com/MisterUser/Linux-Configuration-commands.git ~/.linux_configs
-# $ cd ~/.linux_configs
-# $ chmod +x knollify.sh
-# $ ./knollify.sh
+# $ chmod +x ~/.linux_configs/knollify.sh
+# $ ~/.linux_configs/knollify.sh
 
+cd ~
 
 sudo apt-get -y install vim
 sudo apt-get -y install screen
@@ -29,11 +29,14 @@ sudo apt-get -y install dvipng  # for matplotlib
 
 
 # config files
+mv ~/.bashrc ~/.bashrc_old
 ln -s ~/.linux_configs/.bashrc ~/.bashrc
 ln -s ~/.linux_configs/.bash_aliases ~/.bash_aliases
 ln -s ~/.linux_configs/.vim ~/.vim
 ln -s ~/.linux_configs/.vim/.vimrc ~/.vimrc
 ln -s ~/.linux_configs/.screenrc ~/.screenrc
+
+source .bashrc
 
 #make vimdiff default git difftool
 git config --global user.email "mr@user.com"
@@ -47,17 +50,30 @@ git config --global merge.tool vimdiff
 
 # install Anaconda or Miniconda
 # export PATH="/home/mr_user/anaconda3/bin:$PATH"
-# numpy scipy matplotlib numba scikit-learn jupyter ipython 
-# pip install jupyter
+# conda install numpy scipy matplotlib numba scikit-learn jupyter ipython seaborn
+
+
+# install chrome
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get -y install libappindicator1 libindicator7
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm -f google-chrome-stable_current_amd64.deb
 
 # install dropbox
-# install chrome
-# install pycharm
-# sudo apt-get -y install guake
+# use .deb package
+# then in settings-> session and startup -> application autostart
+#  change Dropbox code to
+#   sleep 15 && dropbox stop && env DBUS_SESSION_BUS_ADDRESS="" dropbox start -i
+
+# install pycharm -> code in dropbox/Schule/TU_Berlin/6OUUZ3ECUO.txt
+
+# XXX   sudo apt-get -y install guake
+
 # for Xubuntu->Settings->Keyboard->Shortcuts->Add
 #      paste 'xfce4-terminal --drop-down' 
 #      then give F12 as hotkey
 
+sudo apt-get update && sudo apt-get upgrade -y
 
 #-------------------------------NOTES----------------------------#
 #---For Qt Xterm settings---#
