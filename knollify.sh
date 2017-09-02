@@ -46,6 +46,9 @@ git config --global merge.tool vimdiff
 # install chrome
 # install pycharm
 # sudo apt-get -y install guake
+# for Xubuntu->Settings->Keyboard->Shortcuts->Add
+#      paste 'xfce4-terminal --drop-down' 
+#      then give F12 as hotkey
 
 
 #-------------------------------NOTES----------------------------#
