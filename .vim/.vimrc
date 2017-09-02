@@ -121,7 +121,7 @@ highlight SpellBad term=underline cterm=underline ctermfg=5 gui=underline guifg=
 " ]M            Jump on next class or method (normal, visual, operator modes)
 let g:pymode_rope = 0
 let g:pymode_rope_complete_on_dot = 0
-let g:pymode_rope_completion = 1
+let g:pymode_rope_completion = 0
 " once autcomplete is done, close preview window
 autocmd CompleteDone * pclose 
 " Override go-to.definition key shortcut to Ctrl-]
@@ -184,7 +184,19 @@ hi ColorColumn ctermbg=Grey ctermfg=Black
 
 " vimdiff colorscheme
 if &diff
-    colorscheme late_evening
+    "colorscheme late_evening
+
+    syntax enable
+    set t_Co=16
+    set background=light
+    colorscheme dues
+
+endif
+
+if has("autocmd")
+  au InsertEnter * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_BLOCK/TERMINAL_CURSOR_SHAPE_UNDERLINE/' ~/.config/xfce4/terminal/terminalrc"                                                                                          
+  au InsertLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"                                                                                          
+  au VimLeave * silent execute "!sed -i.bak -e 's/TERMINAL_CURSOR_SHAPE_UNDERLINE/TERMINAL_CURSOR_SHAPE_BLOCK/' ~/.config/xfce4/terminal/terminalrc"  
 endif
 
 " Hit enter in the file browser to open the selected
