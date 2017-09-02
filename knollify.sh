@@ -30,6 +30,7 @@ sudo apt-get -y install exfat-fuse exfat-utils
 sudo apt-get -y install inkscape
 sudo apt-get -y install htop
 sudo apt-get -y install wget
+sudo apt-get -y install texmaker
 
 # Latex
 sudo apt-get -y install texlive texlive-lang-german texlive-doc-de texlive-latex-extra texmaker
