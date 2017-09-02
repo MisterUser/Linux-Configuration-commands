@@ -4,7 +4,15 @@
 #============================#
 
 #Commands to customize a new installation/system
-sudo apt-get -y install git
+
+# First download git: 
+# $ sudo apt-get -y install git
+# $ git clone https://github.com/MisterUser/Linux-Configuration-commands.git ~/.linux_configs
+# $ cd ~/.linux_configs
+# $ chmod +x knollify.sh
+# $ ./knollify.sh
+
+
 sudo apt-get -y install vim
 sudo apt-get -y install screen
 sudo apt-get -y install ncurses-term
@@ -19,13 +27,13 @@ sudo apt-get -y install wget
 sudo apt-get -y install texlive texlive-lang-german texlive-doc-de texlive-latex-extra texmaker
 sudo apt-get -y install dvipng  # for matplotlib
 
-git clone https://github.com/MisterUser/Linux-Configuration-commands.git ~/linux_configs
 
-ln -s ~/linux_configs/.bashrc ~/.bashrc
-ln -s ~/linux_configs/.bash_aliases ~/.bash_aliases
-ln -s ~/linux_configs/.vim ~/.vim
-ln -s ~/linux_configs/.vim/.vimrc ~/.vimrc
-ln -s ~/linux_configs/.screenrc ~/.screenrc
+# config files
+ln -s ~/.linux_configs/.bashrc ~/.bashrc
+ln -s ~/.linux_configs/.bash_aliases ~/.bash_aliases
+ln -s ~/.linux_configs/.vim ~/.vim
+ln -s ~/.linux_configs/.vim/.vimrc ~/.vimrc
+ln -s ~/.linux_configs/.screenrc ~/.screenrc
 
 #make vimdiff default git difftool
 git config --global user.email "mr@user.com"
