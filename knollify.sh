@@ -84,6 +84,21 @@ rm -f google-chrome-stable_current_amd64.deb
 
 sudo apt-get update && sudo apt-get upgrade -y
 
+# Other Programs
+# tuxguitar
+# Mendeley Desktop
+# TeXStudio
+# Redshift
+# Terminator
+# Rosegarden
+# Ardour
+# QjackCTL
+# guitarix
+# Audacity
+# Inkscape
+# julia
+
+
 #-------------------------------NOTES----------------------------#
 #---For Qt Xterm settings---#
 #edit .Xresources in home directory
