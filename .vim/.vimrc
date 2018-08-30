@@ -208,3 +208,5 @@ let g:netrw_winsize = 15
 
 " Default to tree mode
 let g:netrw_liststyle = 3
+
+let g:slime_target = "screen"
