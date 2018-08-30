@@ -99,6 +99,7 @@ sudo apt-get update && sudo apt-get upgrade -y
 # Inkscape
 # julia
 # Hydrogen (drums)
+# Calibre
 
 
 #-------------------------------NOTES----------------------------#
