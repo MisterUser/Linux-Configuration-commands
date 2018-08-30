@@ -30,10 +30,11 @@ sudo apt-get -y install exfat-fuse exfat-utils
 sudo apt-get -y install inkscape
 sudo apt-get -y install htop
 sudo apt-get -y install wget
-sudo apt-get -y install texmaker
+#sudo apt-get -y install texmaker
+sudo apt-get -y install texstudio
 
 # Latex
-sudo apt-get -y install texlive texlive-lang-german texlive-doc-de texlive-latex-extra texmaker
+sudo apt-get -y install texlive texlive-lang-german texlive-doc-de texlive-latex-extra
 sudo apt-get -y install dvipng  # for matplotlib
 
 
@@ -97,6 +98,8 @@ sudo apt-get update && sudo apt-get upgrade -y
 # Audacity
 # Inkscape
 # julia
+# Hydrogen (drums)
+# Calibre
 
 
 #-------------------------------NOTES----------------------------#
