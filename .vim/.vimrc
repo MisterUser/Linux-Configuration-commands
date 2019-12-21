@@ -14,6 +14,14 @@ filetype plugin indent on
 syntax on
 syntax enable
 
+set statusline=
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=\ %y
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+"set statusline+=\ 
 
 function! ToggleVExplorer()
     if exists("t:expl_buf_num")

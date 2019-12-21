@@ -148,3 +148,7 @@ fi
 # added by Miniconda3 4.3.21 installer
 # export PYTHONPATH="${PYTHONPATH}:/home/mr_user/Dropbox/Schule/TU_Berlin/python_lib"
 export PATH="/home/mr_user/miniconda3/bin:$PATH"
+export PATH="/home/mr_user/Workspace/kingdom-death-monster:$PATH"
+export PYTHONPATH="/home/mr_user/Workspace/neuronaldynamics-exercises:${PYTHONPATH}"
+export PYTHONPATH="/home/mr_user/Workspace:${PYTHONPATH}"
+export PYTHONPATH="/home/mr_user/Workspace/phd_codebase:${PYTHONPATH}"
