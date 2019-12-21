@@ -1,3 +1,7 @@
+"For Pathogen
+"filetype off
+"execute pathogen#infect()
+"filetype plugin indent on
 "List of plugins:
 " - pathogen (disabled)
 " - python-mode (has rope)
@@ -13,6 +17,20 @@ filetype off
 filetype plugin indent on
 syntax on
 syntax enable
+
+" set t_Co=256   " This is may or may not needed.
+"For Pathogen
+"filetype off
+"execute pathogen#infect()
+"filetype plugin indent on
+
+
+colorscheme PaperColor
+"colo seoul256
+"colo seoul256-light
+"let g:seoul256_background = 254
+set background=light
+"set background=dark
 
 
 function! ToggleVExplorer()
@@ -67,6 +85,12 @@ set backspace=2 "have to set backspace for some reason
 "set omnifunc=syntaxcomplete#Complete
 "g/^\_s\+print/s/$/)/gc -> adds paren at all lines starting w/ print
 
+set tags=tags;/
+
+"map <F2> :NERDTreeToggle<CR> 
+map <F2> :Vex <bar> vertical resize 30<CR>
+"map <F3> :TlistToggle<CR>
+map <F3> :q<CR>
 nnoremap <leader>f :buffers<CR>
 nnoremap <leader>s :so ~/.vimrc<CR>
 map + 10<C-W>>
@@ -79,11 +103,15 @@ nmap <leader>b ipu.db  # @XXX<Esc>
 map <silent> <F2> :call ToggleVExplorer()<CR>
 map <F3> :TlistToggle<CR>
 map <F4> :TaskList<CR>
+map <buffer> <F5> :exec '!python' shellescape(@%, 1)<CR>
 " <F5> for debug
 map <buffer> <F5> :exec '!python3' shellescape(@%, 1)<CR> 
 map <F7> :norm ^xx<CR> 
 map <F8> :norm I# <CR> 
-"map <F9> :norm I% <CR>
+map <F9> :norm I% <CR>
+map <F11> :20vsp /home/mr_user/.vim/vim_command_notes<CR>
+nnoremap = :vertical resize +10<CR>
+nnoremap - :vertical resize -10<CR>
 map <F9> :norm BvExa'<Esc>pa'
 map <F10> :norm BvExa(<Esc>pa)
 "map <F9> :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)<CR>
@@ -97,6 +125,10 @@ nmap nc :%s/\([,#]\{1}\)\(\S\)/\1 \2/g<CR>
 
 let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
 
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
 "The below are already accomplished with the miniBufExpl settings above
 noremap <C-J> <C-W><C-J>
 noremap <C-K> <C-W><C-K>
@@ -105,6 +137,15 @@ noremap <C-H> <C-W><C-H>
 
 highlight clear SpellBad
 highlight SpellBad term=underline cterm=underline ctermfg=5 gui=underline guifg=SlateBlue
+
+" let $Tlist_Ctags_Cmd='/usr/local/bin/ctags'
+" let $Tlist_Ctags_Cmd='/home/gregory/.vim/plugin/ctags-5.8'
+
+"The below are already accomplished with the miniBufExpl settings above
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
 
 " Python-mode
 " Activate rope
@@ -168,9 +209,9 @@ let g:pymode_options_colorcolumn = 1
 let g:pymode_python='python3'
 
 "NerdTree Settings
-"let g:NERDTreeDirArrows = 1
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
 
 " Octave syntax 
 augroup filetypedetect 
@@ -206,7 +247,24 @@ let g:netrw_winsize = 15
 " let g:netrw_altv = 1 " changes from left to right split
 " let g:netrw_preview=1
 
+set nocompatible
+filetype off
 " Default to tree mode
 let g:netrw_liststyle = 3
-
 let g:slime_target = "screen"
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+
+" Add plugins here"
+Plugin 'vim-airline/vim-airline'
+Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'junegunn/seoul256.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'tomtom/tcomment_vim'
+
+
+call vundle#end()
+filetype plugin indent on
