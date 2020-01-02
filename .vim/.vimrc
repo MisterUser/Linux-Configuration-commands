@@ -254,12 +254,17 @@ let g:netrw_browse_split = 2
 let g:netrw_winsize = 15 
 " let g:netrw_altv = 1 " changes from left to right split
 " let g:netrw_preview=1
-
-set nocompatible
-filetype off
+"
 " Default to tree mode
 let g:netrw_liststyle = 3
 let g:slime_target = "screen"
+
+let g:ycm_auto_trigger = 1
+
+let g:airline_powerline_fonts = 1
+
+set nocompatible
+filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
