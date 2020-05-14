@@ -21,17 +21,22 @@ mkdir ~/Workspace
 
 cd ~
 
-sudo apt-get -y install vim
-sudo apt-get -y install screen
-sudo apt-get -y install ncurses-term
-sudo apt-get -y install gtk-redshift
-sudo apt-get -y install gparted
-sudo apt-get -y install exfat-fuse exfat-utils
-sudo apt-get -y install inkscape
-sudo apt-get -y install htop
-sudo apt-get -y install wget
-#sudo apt-get -y install texmaker
-sudo apt-get -y install texstudio
+sudo apt -y install git 
+sudo apt -y install vim
+sudo apt -y install tmux 
+sudo apt -y install tree
+sudo apt -y install ncurses-term
+sudo apt -y install gtk-redshift
+sudo apt -y install gparted
+sudo apt -y install exfat-fuse exfat-utils
+sudo apt -y install inkscape
+sudo apt -y install htop
+sudo apt -y install wget
+sudo apt -y install texstudio
+# If Ubuntu: sudo apt -y install guake
+# for Xubuntu->Settings->Keyboard->Shortcuts->Add
+#      paste 'xfce4-terminal --drop-down' 
+#      then give F12 as hotkey
 
 # Latex
 sudo apt-get -y install texlive texlive-lang-german texlive-doc-de texlive-latex-extra
@@ -45,6 +50,7 @@ ln -s ~/.linux_configs/.bash_aliases ~/.bash_aliases
 ln -s ~/.linux_configs/.vim ~/.vim
 ln -s ~/.linux_configs/.vim/.vimrc ~/.vimrc
 ln -s ~/.linux_configs/.screenrc ~/.screenrc
+ln -s ~/.linux_configs/.tmux.conf ~/.tmux.conf
 
 source .bashrc
 
@@ -63,42 +69,36 @@ git config --global merge.tool vimdiff
 # conda install numpy scipy matplotlib numba scikit-learn jupyter ipython seaborn
 
 
-# install chrome
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo apt-get -y install libappindicator1 libindicator7
-sudo dpkg -i google-chrome-stable_current_amd64.deb
-rm -f google-chrome-stable_current_amd64.deb
+# [DEPRECATED]install chrome
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# sudo apt-get -y install libappindicator1 libindicator7
+# sudo dpkg -i google-chrome-stable_current_amd64.deb
+# rm -f google-chrome-stable_current_amd64.deb
 
-# install dropbox
+# [DEPRECATED] install dropbox
 # use .deb package
 # then in settings-> session and startup -> application autostart
 #  change Dropbox code to
 #   sleep 15 && dropbox stop && env DBUS_SESSION_BUS_ADDRESS="" dropbox start -i
 
-# install pycharm -> code in dropbox/Schule/TU_Berlin/6OUUZ3ECUO.txt
 
-# XXX   sudo apt-get -y install guake
 
-# for Xubuntu->Settings->Keyboard->Shortcuts->Add
-#      paste 'xfce4-terminal --drop-down' 
-#      then give F12 as hotkey
 
 sudo apt-get update && sudo apt-get upgrade -y
 
 # Other Programs
-# tuxguitar
+# install pycharm -> code in dropbox/Schule/TU_Berlin/6OUUZ3ECUO.txt
+# Dropbox
 # Mendeley Desktop
-# TeXStudio
-# Redshift
 # Terminator
 # Rosegarden
 # Ardour
+# tuxguitar
 # QjackCTL
 # guitarix
 # Audacity
-# Inkscape
-# julia
 # Hydrogen (drums)
+# julia
 # Calibre
 
 
